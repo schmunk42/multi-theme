@@ -23,6 +23,7 @@
  *
  * @author Tobias Munk <schmunk@usrbin.de>
  */
+
 class EMultiThemeManager extends CThemeManager
 {
     public $rules = array();
@@ -31,8 +32,9 @@ class EMultiThemeManager extends CThemeManager
     {
         $controller = Yii::app()->controller;
 
-        foreach ($this->rules as $rule => $themeName) {
+        if ($controller !== null) foreach ($this->rules as $rule => $themeName) {
             if (preg_match("|" . $rule . "|", $controller->route)) {
+                Yii::trace('components.multi-theme.EMultiThemeManager', 'Rule "'.$rule.'" matched, switching to theme "'.$themeName.'"');
                 $name = $themeName;
                 break;
             }
