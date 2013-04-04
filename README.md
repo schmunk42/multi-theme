@@ -1,4 +1,7 @@
 multi-theme
 ===========
 
-Yii Framework Theme Class to handle multiple themes and view mappings
+EMultiThemeManager
+------------------
+
+Yii Framework ThemeManager class, switch themes by regular expressions for routes
