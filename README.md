@@ -14,3 +14,5 @@ Yii Framework ThemeManager class, switch themes by regular expressions for route
           '^user/(.*)' => 'backend' // switches to 'backend' for all routes beginning with 'user/'
       )
     ),
+
+> Note: The first matching rule wins.
