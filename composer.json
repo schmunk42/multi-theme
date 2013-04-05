@@ -1,6 +1,7 @@
 {
     "name": "schmunk42/multi-theme",
-    "description": "Yii Framework ThemeManager class, switch themes by regular expressions for routes",
+    "description": "Yii Framework Theme-Manager class, switch themes by regular expressions on controller routes.",
+    "keywords": ["yii","theme","manager","route","phundament"],
     "license": "BSD-3-Clause",
     "authors": [
         {
