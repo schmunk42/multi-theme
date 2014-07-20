@@ -33,6 +33,14 @@ class EMultiThemeManager extends CThemeManager
         $controller = Yii::app()->controller;
 
         if ($controller !== null) foreach ($this->rules as $rule => $themeName) {
+            if (!is_array($theme)) {
+                $themeName = $theme;
+            } else {
+                $themeName = $theme['name'];
+                if (isset($theme['basePath'])) {
+                    $this->setBasePath(Yii::getPathOfAlias($theme['basePath']));
+                }
+            }
             if (preg_match("|" . $rule . "|", $controller->route)) {
                 Yii::trace('components.multi-theme.EMultiThemeManager', 'Rule "'.$rule.'" matched, switching to theme "'.$themeName.'"');
                 $name = $themeName;
