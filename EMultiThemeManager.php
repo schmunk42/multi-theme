@@ -32,7 +32,7 @@ class EMultiThemeManager extends CThemeManager
     {
         $controller = Yii::app()->controller;
 
-        if ($controller !== null) foreach ($this->rules as $rule => $themeName) {
+        if ($controller !== null) foreach ($this->rules as $rule => $theme) {
             if (!is_array($theme)) {
                 $themeName = $theme;
             } else {
